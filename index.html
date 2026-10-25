@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e2bdb1">
+<title>Saai Sankhe – Data, made understandable</title>
+<meta name="description" content="Saai Sankhe. B.Tech Data Science student at NMIMS. Building projects that turn data into decisions.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e2bdb1;--bg2:#d3a999;--ink:#14213d;--muted:#363f5f;--line:rgba(20,33,61,.22);--accent:#1b2978;--on:#fbeee9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.65;font-size:1.05rem}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0;line-height:1.02;letter-spacing:-.02em}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--accent);color:var(--on);padding:8px 12px;z-index:20}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(226,189,177,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;text-decoration:none;font-size:1.1rem}
+header nav{display:flex;gap:26px}
+header nav a{text-decoration:none;font-size:.9rem;color:var(--muted)}
+header nav a:hover{color:var(--ink)}
+@media(max-width:700px){header nav a:not(:last-child){display:none}}
+.label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 18px}
+/* hero */
+.hero{min-height:calc(100vh - 64px);display:grid;align-items:center;padding:56px 0;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.orbit{max-width:300px;margin:0 auto}}
+.hero h1{font-size:clamp(2.8rem,7.4vw,5.6rem);font-weight:800}
+.hero p.lead{max-width:46ch;color:var(--muted);margin:24px 0 32px;font-size:1.15rem}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--accent);color:var(--on);font-weight:600;text-decoration:none;margin:0 10px 10px 0}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:hover{filter:brightness(1.08)}
+.hero .wrap>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .wrap>*:nth-child(2){animation-delay:.2s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.orbit svg{width:100%;height:auto;overflow:visible}
+.spin{transform-origin:200px 200px;animation:spin 40s linear infinite}
+.spin.r{animation-duration:60s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.hero .wrap>*,.spin{animation:none}html{scroll-behavior:auto}}
+/* sections */
+section{padding:110px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg2)}
+.vision h2{font-size:clamp(1.8rem,4vw,3rem);max-width:24ch;line-height:1.12;font-weight:600}
+.flow{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px;padding:0;list-style:none}
+.flow li{border:1.5px solid var(--line);border-radius:999px;padding:10px 20px;font-weight:500}
+.flow li+li::before{content:"→";margin-right:12px;color:var(--accent)}
+.flow li{display:flex}
+h2.big{font-size:clamp(2rem,5vw,3.6rem);font-weight:800;margin-bottom:48px;max-width:18ch}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:36px}
+.three h3{font-size:1.4rem;margin-bottom:12px;font-weight:600}
+.three p{color:var(--muted);margin:0}
+.three>div{border-top:2px solid var(--accent);padding-top:20px}
+/* work */
+.work{display:grid;gap:20px}
+.card{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;border:1.5px solid var(--line);border-radius:20px;padding:36px;text-decoration:none;transition:background .2s,border-color .2s}
+.card:hover{background:rgba(255,255,255,.22);border-color:var(--accent)}
+.card h3{font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:8px}
+.card p{margin:0;color:var(--muted);max-width:52ch}
+.card .tags{margin-top:16px;font-size:.88rem;color:var(--accent)}
+.card .go{font-size:1.8rem}
+.card.soon{border-style:dashed}
+/* skills */
+.skills{display:flex;flex-wrap:wrap;gap:12px;padding:0;list-style:none;margin:0}
+.skills li{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.3rem;padding:12px 24px;border-radius:14px;background:rgba(27,41,120,.09)}
+.note{color:var(--muted);margin-top:24px;font-size:.95rem}
+/* principles */
+.pr{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;border-top:1px solid var(--line)}
+.pr div{padding:30px 28px 30px 0;border-bottom:1px solid var(--line)}
+.pr h3{font-size:1.2rem;margin-bottom:8px;font-weight:600}
+.pr p{margin:0;color:var(--muted)}
+/* learning */
+.learn{max-width:62ch}
+.learn p{color:var(--muted);font-size:1.15rem}
+/* contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(2.2rem,6vw,4.6rem);font-weight:800;margin:0 auto 36px;max-width:16ch}
+footer{padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ---- upgrades ---- */
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.typed{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;margin:22px 0 0;color:var(--accent);min-height:1.9rem;font-weight:600}
+.typed::after{content:"|";margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.lead{margin-top:14px}
+.js .rv{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .split .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.js .split .w>span{display:inline-block;transform:translateY(110%);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .split.in .w>span{transform:none}
+.cur,.ring{position:fixed;top:0;left:0;pointer-events:none;z-index:50;border-radius:50%;opacity:0;transition:opacity .3s}
+.cur{width:8px;height:8px;background:var(--accent);margin:-4px 0 0 -4px}
+.ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid var(--accent);transition:width .25s,height .25s,margin .25s,opacity .3s,background .25s}
+.ring.big{width:70px;height:70px;margin:-35px 0 0 -35px;background:rgba(27,41,120,.12)}
+.card{position:relative;overflow:hidden;transform-style:preserve-3d;will-change:transform}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(27,41,120,.12),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before{opacity:1}
+.btn{transition:transform .2s ease,filter .2s}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:20px 0}
+.track{display:flex;gap:48px;width:max-content;animation:slide 30s linear infinite;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:2rem;white-space:nowrap}
+.track span:nth-child(even){color:var(--muted)}
+@keyframes slide{to{transform:translateX(-50%)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+.stat{border:1.5px solid var(--line);border-radius:20px;padding:32px}
+.stat b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(3rem,7vw,5rem);font-weight:800;color:var(--accent);line-height:1}
+.stat span{color:var(--muted)}
+@media(prefers-reduced-motion:reduce){.track{animation:none}.typed::after{animation:none}.js .rv,.js .split .w>span{opacity:1;transform:none;transition:none}}
+
+/* navy contrast bands */
+section.alt,section.vision,.marquee,footer{--ink:#f6e3dc;--muted:#c5cbe8;--line:rgba(246,227,220,.25);--accent:#f2bba8;--on:#14213d;background:#14205c;color:var(--ink)}
+.cur,.ring{mix-blend-mode:difference}
+.cur{background:#fff}
+.ring{border-color:#fff}
+.ring.big{background:rgba(255,255,255,.25)}
+/* light pink bands */
+section.lp{background:#f8dfe3}
+section.lp .skills li{background:rgba(27,41,120,.1)}
+</style>
+</head>
+<body>
+<div class="cur" id="cur"></div><div class="ring" id="ring"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#home">Saai Sankhe</a>
+  <nav aria-label="Main"><a href="#vision">Vision</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#learning">Learning</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero" id="home" style="border:0;padding:56px 0">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <p class="label">B.Tech Data Science · NMIMS</p>
+      <h1>Making data easier to understand.</h1>
+      <p class="typed" aria-label="Data science student, builder, curious learner">I'm a <span id="type"></span></p>
+      <p class="lead">I'm Saai Sankhe, a third-year Data Science student. I turn raw numbers into projects people can read, use and learn from.</p>
+      <a class="btn" href="#work">See my work</a>
+      <a class="btn ghost" href="https://github.com/saai2005" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="orbit" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <circle cx="200" cy="200" r="70" fill="none" stroke="rgba(20,33,61,.28)"/>
+        <circle cx="200" cy="200" r="130" fill="none" stroke="rgba(20,33,61,.2)"/>
+        <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(20,33,61,.14)"/>
+        <circle cx="200" cy="200" r="34" fill="#1b2978"/>
+        <g class="spin"><circle cx="270" cy="200" r="12" fill="#14213d"/><circle cx="130" cy="200" r="7" fill="#1b2978"/></g>
+        <g class="spin r"><circle cx="200" cy="70" r="10" fill="#14213d"/><circle cx="313" cy="265" r="14" fill="#1b2978"/><circle cx="110" cy="290" r="8" fill="#14213d"/></g>
+        <g class="spin" style="animation-duration:90s"><circle cx="390" cy="200" r="9" fill="#14213d"/><circle cx="10" cy="200" r="11" fill="#1b2978"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track"><span>Python</span><span>SQL</span><span>Pandas</span><span>NumPy</span><span>Machine Learning</span><span>Data Visualization</span><span>Git &amp; GitHub</span><span>Python</span><span>SQL</span><span>Pandas</span><span>NumPy</span><span>Machine Learning</span><span>Data Visualization</span><span>Git &amp; GitHub</span></div></div>
+
+<section class="vision" id="vision">
+  <div class="wrap">
+    <p class="label">Vision</p>
+    <h2 class="split">I like taking a messy question and ending up with something clear that people can actually use.</h2>
+    <ul class="flow rv" aria-label="How I work">
+      <li>Ask a question</li><li>Explore the data</li><li>Build a model</li><li>Learn and refine</li>
+    </ul>
+  </div>
+</section>
+
+<section class="lp">
+  <div class="wrap">
+    <p class="label">What I bring</p>
+    <h2 class="big split">Different skills. Connected thinking.</h2>
+    <div class="three rv">
+      <div><h3>Data analysis</h3><p>Cleaning, exploring and visualizing data so the patterns are easy to see and explain.</p></div>
+      <div><h3>Machine learning</h3><p>Building and testing models, and learning what they can and cannot tell us.</p></div>
+      <div><h3>Clear communication</h3><p>Turning results into plain language, charts and projects other people can follow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label rv">By the numbers</p>
+    <div class="stats">
+      <div class="stat rv"><b data-count="3">0</b><span>Year of B.Tech Data Science</span></div>
+      <div class="stat rv"><b data-count="7" data-suffix="+">0</b><span>Tools and skills I use</span></div>
+      <div class="stat rv"><b data-count="2">0</b><span>Projects on this page</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="work">
+  <div class="wrap">
+    <p class="label">Selected work</p>
+    <h2 class="big split">Projects, built to be explored.</h2>
+    <div class="work rv">
+      <a class="card" href="https://github.com/saai2005/my-cal-" target="_blank" rel="noopener">
+        <div><h3>Two-Sample t-Test Calculator</h3><p>An interactive statistics tool that takes two sample datasets and uses a pooled-variance t-test to show whether their means differ significantly.</p><p class="tags">Python · Statistics · Hypothesis Testing</p></div>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <a class="card" href="https://github.com/saai2005/alzheimer_brain_morphology_mental_health" target="_blank" rel="noopener">
+        <div><h3>Brain Morphology &amp; Mental Health in Alzheimer's</h3><p>A data science study of how brain volume, daily functioning and symptom severity relate across Alzheimer's diagnostic groups, using ANOVA, MANOVA, correlations and Random Forest models.</p><p class="tags">Python · Pandas · scikit-learn · Statistics</p><p class="tags" style="color:var(--muted)">Forked from the original project by Patricia C. Torrell</p></div>
+        <span class="go" aria-hidden="true">↗</span>
+      </a>
+      <div class="card soon">
+        <div><h3>More coming</h3><p>New projects will be added here as I build them.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="lp">
+  <div class="wrap">
+    <p class="label">Skills</p>
+    <h2 class="big split">Tools I work with.</h2>
+    <ul class="skills">
+      <li>Python</li><li>SQL</li><li>Pandas</li><li>NumPy</li><li>Machine Learning</li><li>Data Visualization</li><li>Git &amp; GitHub</li>
+    </ul>
+    <p class="note">This list will be updated as I learn more.</p>
+  </div>
+</section>
+
+<section class="alt" id="about">
+  <div class="wrap">
+    <p class="label">Guiding principles</p>
+    <h2 class="big split">How I like to learn and build.</h2>
+    <div class="pr rv">
+      <div><h3>Start with the question</h3><p>Good analysis begins with knowing what you want to find out.</p></div>
+      <div><h3>Learn by building</h3><p>A working project teaches more than reading about it.</p></div>
+      <div><h3>Make it clear</h3><p>If results can't be explained simply, they aren't finished.</p></div>
+      <div><h3>Stay curious</h3><p>Keep asking better questions and keep improving past work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap learn">
+    <p class="label">Always learning</p>
+    <h2 class="big split">The future begins with curiosity.</h2>
+    <p>I'm in my third year of B.Tech in Data Science at NMIMS. I'm learning how data, statistics and code come together, and I use projects to put each new idea into practice.</p>
+  </div>
+</section>
+
+<section class="alt contact" id="contact">
+  <div class="wrap">
+    <h2 class="split">Let's build something with data.</h2>
+    <a class="btn" href="https://github.com/saai2005" target="_blank" rel="noopener">View my GitHub</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span>© <span id="y"></span> Saai Sankhe · B.Tech Data Science, NMIMS</span>
+  <a href="https://github.com/saai2005" target="_blank" rel="noopener">github.com/saai2005</a>
+</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();
+document.documentElement.classList.add('js');
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// split headlines into words
+document.querySelectorAll('.split').forEach(el=>{
+  const words=el.textContent.trim().split(/\s+/);
+  el.setAttribute('aria-label',el.textContent.trim());
+  el.innerHTML=words.map((w,i)=>`<span class="w" aria-hidden="true"><span style="transition-delay:${i*60}ms">${w}</span></span>`).join(' ');
+});
+// reveal + counters
+const count=el=>{const t=+el.dataset.count,suf=el.dataset.suffix||'';if(reduce){el.textContent=t+suf;return}let n=0;const st=performance.now();(function f(now){const k=Math.min((now-st)/1400,1);el.textContent=Math.round(t*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(f)})(st)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-count]').forEach(count);io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv,.split').forEach(el=>io.observe(el));
+// typing effect
+const roles=['data science student.','builder of projects.','problem solver.','curious learner.'];
+const ty=document.getElementById('type');let ri=0,ci=0,del=false;
+(function tick(){const r=roles[ri];if(reduce){ty.textContent=r;return}
+ ty.textContent=r.slice(0,ci);
+ if(!del&&ci<r.length){ci++;setTimeout(tick,70)}
+ else if(!del){del=true;setTimeout(tick,1500)}
+ else if(ci>0){ci--;setTimeout(tick,35)}
+ else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,300)}})();
+// particle network
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,pts=[],m={x:-999,y:-999};
+const size=()=>{W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;pts=Array.from({length:Math.min(90,Math.floor(W*H/14000))},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))};
+size();addEventListener('resize',size);
+cv.parentElement.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
+cv.parentElement.addEventListener('mouseleave',()=>{m.x=m.y=-999});
+(function draw(){cx.clearRect(0,0,W,H);
+ pts.forEach((p,i)=>{if(!reduce){p.x+=p.vx;p.y+=p.vy}if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+  const dx=p.x-m.x,dy=p.y-m.y,d=Math.hypot(dx,dy);if(d<120&&!reduce){p.x+=dx/d*1.2;p.y+=dy/d*1.2}
+  cx.fillStyle='rgba(20,33,61,.65)';cx.beginPath();cx.arc(p.x,p.y,1.8,0,7);cx.fill();
+  for(let j=i+1;j<pts.length;j++){const q=pts[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){cx.strokeStyle=`rgba(20,33,61,${.22*(1-dd/120)})`;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+  if(d<160){cx.strokeStyle=`rgba(27,41,120,${.7*(1-d/160)})`;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(m.x,m.y);cx.stroke()}});
+ requestAnimationFrame(draw)})();
+// cursor, tilt, magnetic buttons (mouse only)
+if(matchMedia('(pointer:fine)').matches&&!reduce){
+ const cur=document.getElementById('cur'),ring=document.getElementById('ring');let rx=0,ry=0,mx=0,my=0;
+ addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.opacity=ring.style.opacity=1;cur.style.transform=`translate(${mx}px,${my}px)`});
+ (function f(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(f)})();
+ document.querySelectorAll('a,.card,.btn').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('big'));el.addEventListener('mouseleave',()=>ring.classList.remove('big'))});
+ document.querySelectorAll('.card:not(.soon)').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');c.style.transform=`perspective(900px) rotateX(${(.5-y/r.height)*6}deg) rotateY(${(x/r.width-.5)*6}deg)`});
+  c.addEventListener('mouseleave',()=>c.style.transform='')});
+ document.querySelectorAll('.btn').forEach(b=>{
+  b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});
+  b.addEventListener('mouseleave',()=>b.style.transform='')});
+}
+</script>
+</body>
+</html>
